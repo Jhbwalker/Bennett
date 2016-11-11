@@ -1,0 +1,16 @@
+
+@import url(css/site.css);
+@import url(css/mac.css);
+@import url(css/header.css);
+@import url(css/footer.css);
+@import url(css/animate.css);
+
+#Main_Container{
+  background: url('http://nvg.site/bennett/wp-content/uploads/2016/08/bg.jpg');
+  background-size:100% 100%;
+}
+#texa{
+  margin-left:-10px;
+  color:white;
+}
+

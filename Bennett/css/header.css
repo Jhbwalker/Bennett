@@ -1,0 +1,39 @@
+.page-introduce{
+	display: none !important;
+}
+
+#main-header, #main-header-sticky{
+	color:blue;
+	display:none;
+}
+#wrapper-inner{
+	position:relative;
+
+
+}
+#custom-header{
+	position: absolute !important;
+    width: 100%;
+    top: 0;
+    z-index: 2;
+    padding-top:20px;
+}
+.the-nav ul{
+	padding:0;margin:0;
+	text-align:center;
+	list-style: none;
+}
+.the-nav ul > li{
+	display:inline-block;
+	margin:0 15px;
+}
+.the-nav a{
+	color:white;
+}
+.the-nav a:hover{
+	color:white;
+	font-weight:bold;
+}
+#ignore .superignore img{
+	margin: 0;
+}

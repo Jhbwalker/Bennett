@@ -1,0 +1,32 @@
+@media screen and (min-width:1300px){
+	div.hexa{
+		width:240px;
+	}
+	div#hex-10,div#hex-1{
+		left:-3px;
+	}
+	div#hex-11,div#hex-2{
+		left:259px;
+	}
+	div#hex-12,div#hex-3{
+		right:-263px;
+	}
+	div#hex-9{
+		right:-135px;
+	}
+	div#hex-13,#hex-4{
+		right:-5px;
+	}
+	div#hex-5{
+		left:-134px;
+	}
+	div.row-two-con{
+		top:105.5%;
+	}
+	div.row-three-con{
+		top:212%;
+	}
+	div#home-wrapper{
+		height:1000px;
+	}
+}

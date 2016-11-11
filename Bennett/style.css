@@ -1,0 +1,617 @@
+/*
+	Theme Name: Bennett
+	Template: swenson
+*/
+
+/*********************************************
+*******	Imports for all css files	****
+**********************************************/
+@import url(css/site.css);
+@import url(css/mac.css);
+@import url(css/header.css);
+@import url(css/footer.css);
+@import url(css/client_style.css);
+@import url(css/contact.css);
+@import url(css/dontchange.css);
+
+/* Main Styling for About Page */
+.page-introduce{
+	display: none !important;
+}
+#banner{
+	background-color: rgba(255,255,255, 0.0);
+	margin-top: 45px;
+	margin-bottom:45px;
+}
+p{
+	font-size: 1.1em;
+}
+em{
+	font-size: 1.3em;
+}
+#banner img{
+	height:auto;
+	width: 75px;
+	margin: 0;
+
+}
+#banner p{
+	margin-top:8%;
+	color:white;
+}
+/*
+#inline-email:before{
+	content:'';
+    position: absolute;
+    left: 2.5%;
+    top: 2.5%;
+    width: 95%;
+    height: 95%;
+    border: 3px solid purple;
+
+}
+*/
+#filler{
+	background-color:white;
+}
+.LargeDesktop{
+	height: 980px !important;
+}
+
+/* Dropdown Button */
+.dropbtn {
+		background-color: #5b0b91;
+		color: white;
+		padding: 16px;
+		font-size: 16px;
+		border: none;
+		cursor: pointer;
+}
+#_Name{
+	width:100%;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+		background-color: #3e8e41;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+		position: relative;
+		display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+		display: none;
+		position: absolute;
+		background-color: #f9f9f9;
+		min-width: 160px;
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+		color: black;
+		padding: 12px 16px;
+		text-decoration: none;
+		display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+/*********************************************
+*******  Hover Effects for Clients Page  ****
+**********************************************/
+.darken{
+	text-align:center;
+	-webkit-transition: opacity .25s ease;
+
+}
+.darken:hover{
+	background-image: url('http://nvg.site/bennett/wp-content/uploads/2016/10/overlay.png');
+	opacity: .55;
+
+
+
+}
+.darken:after{
+	content: "here is some text";
+	color: #fff;
+}
+img{
+	margin-bottom: -65px;
+}
+#ignore, .superignore{
+	margin-bottom: 0;
+}
+.image-container{
+	position: relative;
+	clear:both;
+
+}
+#inline-email{
+	z-index: 1;
+}
+.image-container-mid{
+	position:relative;
+	clear:both;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+.image-container-mid .after-mid{
+	position: absolute;
+	top: 0;
+	left:0px;
+	width: 100%;
+	height: 100%;
+	display: none;
+	color:#fff;
+	font-size: 2em;
+	clear:both;
+}
+.image-container-mid:hover .after-mid{
+	display: block;
+
+	opacity: .95;
+	clear:both;
+}
+.image-container-mid .after2{
+	position: absolute;
+	top: 145px;
+	left:0px;
+	width: 100%;
+	height: 100%;
+	display: none;
+	color:white;
+	font-size: 1.3em;
+
+}
+.image-container-mid:hover .after2{
+	display: block;
+
+	opacity: .95;
+}
+.image-container .after{
+	position: absolute;
+	top: 0;
+	left:26px;
+	width: 100%;
+	height: 100%;
+	display: none;
+	color:#fff;
+	font-size: 2em;
+}
+.image-container .after_rt{
+	position: absolute;
+	top: 0;
+	left:-26px;
+	width: 100%;
+	height: 100%;
+	display: none;
+	color:#fff;
+	font-size: 2em;
+}
+.popUpBtn:hover{
+	background-color: white !important;
+	border-color: white !important;
+}
+.image-container-mid .after_ml{
+	position: absolute;
+	top: 0;
+	left: 105px !important;
+	width: 100%;
+	height: 100%;
+	display: none;
+	color:#fff;
+	font-size: 2em;
+}
+.image-container-mid .after_mr{
+	position: absolute;
+	top: 0;
+	left: -105px !important;
+	width: 100%;
+	height: 100%;
+	display: none;
+	color:#fff;
+	font-size: 2em;
+}
+.mc-field-group{
+	margin: 15px 0;
+}
+.popUpBtn{
+	margin: 15px 0;
+}
+.toWhite{
+
+}
+.image-container .after2{
+	position: absolute;
+	top: 155px;
+	left:0px;
+	width: 100%;
+	height: 100%;
+	display: none;
+	color:white;
+	font-size: 1.3em;
+
+}
+.image-container:hover .after{
+	display: block;
+	background: rgba(0,0,0,.6);
+	opacity: .95;
+}
+.image-container:hover .after_rt{
+	display: block;
+	background: rgba(0,0,0,.6);
+	opacity: .95;
+}
+.image-container-mid:hover .after_ml{
+	display: block;
+	background: rgba(0,0,0,.6);
+	opacity: .95;
+}
+.image-container-mid:hover .after_mr{
+	display: block;
+	background: rgba(0,0,0,.6);
+	opacity: .95;
+}
+.image-container:hover .after2{
+	display: block;
+	background: rgba(0,0,0,.6);
+	opacity: .95;
+}
+ .mbe{
+ 	margin:30px 10px 20px 10px;
+ }
+ .whiteshadow{
+ background: rgba(255, 255, 255, 0.15);
+ margin-top: 10px;
+ margin-bottom: 10px;
+ padding-top: 20px;
+
+
+
+ }
+ .whiteshadow p{
+ 	color:white !important;
+ 	padding:5px 50px;
+
+ }
+ #tri-image{
+ 	margin-bottom: 5px;
+ }
+ #testes{
+ 	font-size: 3em;
+ 	margin-top: -30px;
+ }
+ #leadt{
+ 	font-size: .8em;
+ 	font-weight: 100;
+ }
+ #testes2{
+	 font-size: 3em;
+	 margin-top:10px;
+
+ }
+ #leadt2{
+	 font-size: .8em;
+	 font-weight: 100;
+ }
+ #AboutKellysm{
+ 	margin:auto;
+ 	font-size: 1em;
+ }
+ #avS{
+ 	margin-top:50px;
+ }
+ #ctT{
+ 	margin-top:50px;
+ }
+/*********************************************
+*******	Main Container and Backdrops	****
+**********************************************/
+
+#top{
+	margin-bottom: -50px !important;
+	/* padding-bottom: ; */
+}
+#bottom{
+	margin-top:-100px;
+	padding-top: 30px;
+}
+#Main_Container{
+	background: url(http://nvg.site/bennett/wp-content/uploads/2016/08/bg.jpg);
+	background-repeat: no-repeat;
+	height:100% !important;
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: center center;
+	background-color:purple;
+
+}
+#Main_ContainerB{
+	background: url(http://nvg.site/bennett/wp-content/uploads/2016/08/bg.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	height:1075px !important;
+	background-attachment: fixed;
+	background-position: center center;
+	background-color: purple;
+}
+#Main_ContainerC{
+	background: url(http://nvg.site/bennett/wp-content/uploads/2016/08/bg.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	height:1150px !important;
+}
+
+
+.section{
+	margin-top:-20px;
+}
+/*********************************************
+*****************	About Page	***************
+**********************************************/
+/*********************************************
+*******	Section 1 css styling changes 	****
+**********************************************/
+#section1{
+	margin-top: 35px;
+}
+
+#AboutKelly{
+	margin:5px;
+	padding:5%;
+}
+#AboutKelly p{
+	color:white;
+	font-size: 3.3em;
+	text-align: center;
+	margin:20px 25% 0px 25%;
+	right:100px;
+/* 	letter-spacing: 1.5px; */
+}
+
+#hexImage{
+	float: left;
+	margin-left:30%;
+	margin-bottom: 0;
+	margin-top:10px;
+	margin-right:3%;
+	padding:0;
+	width:420px;
+	height:auto;
+
+}
+#wallText{
+	color:white;
+}
+
+#textHeading{
+	color:#fff;
+	font-size:1.3em;
+}
+#AboutText{
+	font-size: 1.5em;
+	color:white;
+	overflow: hidden;
+	word-wrap: break-word;
+	margin:10px;
+
+}
+
+#contactContainer{
+	margin: auto;
+	width:100%;
+}
+#mybtn{
+	margin:0 45%;
+}
+#fitC{
+	color:white;
+	text-align: center;
+	margin: 25px 15px;
+
+}
+#underword{
+	float: left;
+	width:450px;
+	height: auto;
+	font-size: 1.125em;
+	color:#fff;
+	margin-top:0;
+
+}
+#overword{
+	color:#fff;
+	clear:both;
+	padding: 30px;
+	width: 50%;
+	margin-left:25%;
+	font-size: 1.125em;
+	margin-top: -45px;
+
+}
+#msg{
+height: .5px;
+}
+/*********************************************
+***************	Sections 2	******************
+**********************************************/
+#section2{
+	margin:15px 0;
+}
+#section2 p{
+		text-align: center;
+		font-size:4em;
+		text-transform: uppercase;
+}
+
+#section2B{
+	margin-top:60px;
+	margin-bottom:20px;
+
+}
+#section2B p{
+		text-align: center;
+		font-size:4em;
+		text-transform: uppercase;
+}
+
+/*********************************************
+*******	Backdrop for About Page	****
+**********************************************/
+#backdrop{
+	padding: 2px;
+	background: url('http://nvg.site/bennett/wp-content/uploads/2016/10/banner1.jpg');
+	height:350px;
+	width: 100%;
+	color:white;
+	text-align: center;
+	margin-top:0px;
+	/* margin-right: 45px;
+	margin-left: -45px; */
+
+
+}
+.dd{
+	margin-bottom: 3%;
+}
+#pushingDown{/*  margin-top: 7%; */}
+.container-fluid{
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+}
+#backdrop p{
+	margin-top: 6%;
+	font-size: 2.8em;
+	text-align: center;
+	/* margin-left:-25%; */
+}
+.well .well-large{
+	color:black;
+
+}
+/*********************************************
+*******	Footer Syyling for fit icons on page	****
+**********************************************/
+
+#Foots{
+	margin-top:175px !important;
+}
+/*********************************************
+*******	Changes for Medium screens and sm	****
+**********************************************/
+@media screen and (max-width: 460px){
+	#AboutKelly p{
+	color:white;
+	font-size: 3.3em;
+	text-align: center;
+	margin:100px 20% 0px 20%;
+	letter-spacing: 1.5px;
+	width:100%;
+
+}
+/*********************************************
+*******	Hex Images for Clients Page	****
+**********************************************/
+	#hexImage{
+		margin: 10px 20% 5px 20%;
+		display: hidden;
+	}
+	#textHeading{
+		margin:15px 15% 10px 15%;
+	}
+	#underword{
+		margin:5px 12% 5px 12%;
+		text-align: center;
+		width:75%;
+	}
+	#overword{
+		padding-top: 15px;
+		padding-right: 0;
+		padding-bottom: 15px;
+		padding-left: 0;
+		text-align: center;
+		width: 75%;
+		margin:200px auto auto auto;
+	}
+	#backdrop{
+		width:100%;
+		padding:10%;
+	}
+	#backdrop p{
+		font-size: 1.2em;
+
+	}
+	#contactContainer{
+		margin:-10px 25% 5% 25%;
+
+	}
+	#_Name{
+		width:100%;
+	}
+	#mybtn{
+		margin:5px 25% 5% 25%;
+	}
+
+
+}
+/*********************************************
+*******	Changes for 1080p screens	****
+**********************************************/
+@media screen and (max-width: 1200px){
+
+	#AboutKelly p{
+	color:white;
+	font-size: 3.3em;
+	text-align: center;
+	margin:50px 10% 0px 10%;
+	letter-spacing: 1.5px;
+	width:100%;
+	height:auto;
+}
+#hexImage{
+		margin: 10px 25% 5px 25%;
+		display: hidden;
+	}
+	#textHeading{
+		margin:15px 15% 10px 15%;
+	}
+	#underword{
+		margin:5px 12% 5px 12%;
+		text-align: center;
+		width:75%;
+	}
+	#overword{
+		padding-top: 15px;
+		padding-right: 0;
+		padding-bottom: 15px;
+		padding-left: 0;
+		text-align: center;
+		width: 75%;
+		margin:200px auto auto auto;
+	}
+	#backdrop{
+		max-width: 100%;
+		padding:0 -50%;
+	}
+	#contactContainer{
+		margin:-10px 25% 5% 25%;
+
+	}
+	#_Name{
+		width:100%;
+	}
+	#mybtn{
+		margin:5px 25% 5% 25%;
+	}
+
+}
+
+

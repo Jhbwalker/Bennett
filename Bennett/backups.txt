@@ -1,0 +1,835 @@
+<script type="text/javascript">
+ setInterval(function () {
+ //contaier divs for images
+ var all = $('#parentdiv').find('img');
+ //contains random number generator * by the legnth of the array
+ var random = Math.floor(Math.random()*all.length)
+ //All images randomized
+ var Rimg = $( all[random] )
+ //Image sources placed into
+ var randomurls =
+ [
+     'http://nvg.site/bennett/wp-content/uploads/2016/08/hex1.png',
+     'http://nvg.site/bennett/wp-content/uploads/2016/08/hex2.png',
+     'http://nvg.site/bennett/wp-content/uploads/2016/08/hex3.png',
+     'http://nvg.site/bennett/wp-content/uploads/2016/08/hex4.png',
+     'http://nvg.site/bennett/wp-content/uploads/2016/08/hex5.png',
+     'http://nvg.site/bennett/wp-content/uploads/2016/08/hex6.png',
+     'http://nvg.site/bennett/wp-content/uploads/2016/08/hex7.png',
+     'http://nvg.site/bennett/wp-content/uploads/2016/08/hex9.png',
+     'http://nvg.site/bennett/wp-content/uploads/2016/08/hex10.png',
+     'http://nvg.site/bennett/wp-content/uploads/2016/08/hex11.png',
+     'http://nvg.site/bennett/wp-content/uploads/2016/08/hex12.png',
+     'http://nvg.site/bennett/wp-content/uploads/2016/10/hex24.png',
+     'http://nvg.site/bennett/wp-content/uploads/2016/10/hex23.png',
+     'http://nvg.site/bennett/wp-content/uploads/2016/10/hex14.png',
+     'http://nvg.site/bennett/wp-content/uploads/2016/10/hex19-1.png',
+     'http://nvg.site/bennett/wp-content/uploads/2016/10/hex28-1.png',
+     'http://nvg.site/bennett/wp-content/uploads/2016/10/hex29.png',
+     'http://nvg.site/bennett/wp-content/uploads/2016/10/hex22.png',
+     'http://nvg.site/bennett/wp-content/uploads/2016/10/hex21.png',
+     'http://nvg.site/bennett/wp-content/uploads/2016/10/hex20.png',
+     'http://nvg.site/bennett/wp-content/uploads/2016/10/hex18.png',
+     'http://nvg.site/bennett/wp-content/uploads/2016/10/hex17.png',
+     'http://nvg.site/bennett/wp-content/uploads/2016/10/hex16.png',
+     'http://nvg.site/bennett/wp-content/uploads/2016/10/hex15.png',
+     'http://nvg.site/bennett/wp-content/uploads/2016/10/hex13.png',
+     'http://nvg.site/bennett/wp-content/uploads/2016/10/hex25.png',
+     'http://nvg.site/bennett/wp-content/uploads/2016/10/hex26.png',
+     'http://nvg.site/bennett/wp-content/uploads/2016/10/hex27.png',
+     'http://nvg.site/bennett/wp-content/uploads/2016/08/hex8.png'
+
+ ]
+ var usedImages = {};
+ var usedImageCount = 0;
+ var oneurl = randomurls[ Math.floor(Math.random()*randomurls.length)]
+// console.log(oneurl);
+ $('.random').each(function(){
+   if($(this).attr('src') === oneurl) {
+       //console.log("False");
+     return false;
+   } else {
+       var array = [];
+
+       //Shuffle Function
+       var shuffle = function(array){
+           var copy = [], container = array.length, i, isDisplayed = { tempContainer: [], showing: false };
+           //while container is not empty
+           while(container){
+               //random gen for remainder of container
+               i = Math.floor(Math.random() * container--);
+               //pushes a copy of the array into copy var
+               copy.push(array.splice(i, 1) [0]);
+
+               //pushes into another temp var for comparison
+               for(var i = 0; i< copy.length; i++){
+                   isDisplayed.tempContainer.push(copy);
+                   console.log('tempContainer= ' + isDisplayed.tempContainer+ ' copy = '+ copy);
+                   //compares isDisplayed and copy array
+                   var compareArray = function(array1, array2){
+                       var results = true;
+                       //if both arrays are not equal something is wrong
+                       if(array1.length != array2.length){
+                           results = false;
+                       }else{
+                           for(var i = 0; i < array1.length; i++){
+                               //if both array are not identical keep displaying
+                               console.log(array1);
+                               if(array1[i] !== array2[i]){
+                                   results = false;
+                                   isDisplayed.showing = false;
+                                   console.log('This is false');
+                                   console.log(array1 + " compared " + array2);
+                                   break;
+                               }else{
+                                   //else there are identicals use another image
+                                   results= true;
+                                   isDisplayed.showing = true;
+                                   console.log("this is true");
+                               }
+
+                           }
+
+                       }
+
+
+                       return results;
+                   }
+                   compareArray(isDisplayed.tempContainer, copy);
+               }
+           }
+           return copy;
+       }//End of function
+       var num = Math.floor(Math.random() * (oneurl.length));
+       if(!usedImages[num]){
+           document.canvas.src = oneurl[num];
+           usedImages[num] = true;
+           usedImageCount ++;
+           if(usedImageCount === oneurl.length){
+               usedImageCount = 0;
+               usedImages ={};
+           }
+
+       }else{
+
+           Rimg.attr('src', oneurl);
+           console.log(oneurl);
+       }
+   }
+ });
+}, 1000)
+ </script>
+ <script type="text/javascript">
+     function randomRange(min, max){
+         return (new Array(++max-min))
+         .join('.').split('.')
+         .map(function(v,i){return min+i; })
+         .sort(function(){return 0|Math.random()*max;});
+     }
+     var $img = $('img');
+     $('button').click(function(){
+       randomRange(0,30).forEach(function(v,i){
+         setTimeout(function(){
+           $img.eq(v).toggleClass('hidden');
+         }, i*100);
+       });
+     });
+ </script>
+
+ <style>
+     img {
+
+       opacity: 1;
+       -webkit-transition: opacity .3s ease-in-out;
+       -moz-transition: opacity .3s ease-in-out;
+       -ms-transition: opacity .3s ease-in-out;
+       -o-transition: opacity .3s ease-in-out;
+       transition: opacity .3s ease-in-out;
+     }
+     .hidden {
+       opacity: 0;
+       -webkit-transition: opacity .3s ease-in-out;
+       -moz-transition: opacity .3s ease-in-out;
+       -ms-transition: opacity .3s ease-in-out;
+       -o-transition: opacity .3s ease-in-out;
+       transition: opacity .3s ease-in-out;
+     }
+ </style>
+
+
+
+
+div class="container-fluid" id="home-wrapper">
+
+<div class="container" id="parentdiv">
+    <div class="full-w">
+
+        <!--   ROW ONE     -->
+        <div class="row-one-con">
+            <div class="row-one">
+                <div id="hex-1" class="hexa visible-md visible-lg tp-lf random">
+                    <div class="images-container">
+                        <img id="hex-1-1-1" class="the-image1 the-image"
+                             src="http://nvg.site/bennett/wp-content/uploads/2016/08/hex1.png">
+                        <img id="hex-1-1-2" class="the-image1 the-image"
+                             src="http://nvg.site/bennett/wp-content/uploads/2016/08/hex2.png">
+                    </div>
+                </div>
+                <div id="hex-2" class="hexa random">
+                    <div class="images-container">
+                        <img id="hex-1-2-1" class="the-image2 the-image"
+                             src="http://nvg.site/bennett/wp-content/uploads/2016/08/hex7.png">
+                        <img id="hex-1-2-2" class="the-image2 the-image"
+                             src="http://nvg.site/bennett/wp-content/uploads/2016/08/hex8.png">
+                        <img id="hex-1-1-2" class="the-image2 the-image"
+                             src="http://nvg.site/bennett/wp-content/uploads/2016/08/hex9.png">
+                        <img id="hex-1-1-2" class="the-image2 the-image"
+                             src="http://nvg.site/bennett/wp-content/uploads/2016/08/hex10.png">
+                        <img id="hex-1-1-2" class="the-image2 the-image"
+                             src="http://nvg.site/bennett/wp-content/uploads/2016/08/hex5.png">
+                        <img id="hex-1-1-2" class="the-image2 the-image"
+                             src="http://nvg.site/bennett/wp-content/uploads/2016/08/hex6.png">
+                    </div>
+                </div>
+                <div id="hex-3" class="hexa random">
+                    <div class="images-container">
+                        <img id="hex-1-3-1" class="the-image3 the-image"
+                             src="http://nvg.site/bennett/wp-content/uploads/2016/08/hex6.png">
+                        <img id="hex-1-3-2" class="the-image3 the-image"
+                             src="http://nvg.site/bennett/wp-content/uploads/2016/08/hex7.png">
+                        <img id="hex-1-1-2" class="the-image3 the-image"
+                             src="http://nvg.site/bennett/wp-content/uploads/2016/08/hex8.png">
+                        <img id="hex-1-1-2" class="the-image3 the-image"
+                             src="http://nvg.site/bennett/wp-content/uploads/2016/08/hex9.png">
+                        <img id="hex-1-1-2" class="the-image3 the-image"
+                             src="http://nvg.site/bennett/wp-content/uploads/2016/08/hex10.png">
+                        <img id="hex-1-1-2" class="the-image3 the-image"
+                             src="http://nvg.site/bennett/wp-content/uploads/2016/08/hex5.png">
+                    </div>
+                </div>
+                <div id="hex-4" class="hexa visible-md visible-lg random">
+                    <div class="images-container">
+                        <img id="hex-1-4-1" class="the-image4 the-image"
+                             src="http://nvg.site/bennett/wp-content/uploads/2016/08/hex3.png">
+                        <img id="hex-1-4-2" class="the-image4 the-image"
+                             src="http://nvg.site/bennett/wp-content/uploads/2016/08/hex4.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--   ROW TWO     -->
+        <div class="row-two-con">
+            <div class="row-two">
+                <div id="hex-5" class="hexa visible-md visible-lg random">
+                    <div class="images-container">
+                        <img id="hex-2-1-1" class="the-image5 the-image"
+                             src="http://nvg.site/bennett/wp-content/uploads/2016/08/hex11.png">
+                        <img id="hex-2-1-2" class="the-image5 the-image"
+                             src="http://nvg.site/bennett/wp-content/uploads/2016/08/hex12.png">
+                        <img id="hex-1-1-2" class="the-image5 the-image"
+                             src="http://nvg.site/bennett/wp-content/uploads/2016/08/hex13.png">
+                    </div>
+                </div>
+                <div id="hex-6" class="hexa random">
+                    <div class="images-container">
+                        <img id="hex-2-2-1" class="the-image6 the-image"
+                             src="http://nvg.site/bennett/wp-content/uploads/2016/08/hex8.png">
+                        <img id="hex-2-2-2" class="the-image6 the-image"
+                             src="http://nvg.site/bennett/wp-content/uploads/2016/08/hex9.png">
+                        <img id="hex-1-1-2" class="the-image6 the-image"
+                             src="http://nvg.site/bennett/wp-content/uploads/2016/08/hex10.png">
+                        <img id="hex-1-1-2" class="the-image6 the-image"
+                             src="http://nvg.site/bennett/wp-content/uploads/2016/08/hex5.png">
+                        <img id="hex-1-1-2" class="the-image6 the-image"
+                             src="http://nvg.site/bennett/wp-content/uploads/2016/08/hex6.png">
+                        <img id="hex-1-1-2" class="the-image6 the-image"
+                             src="http://nvg.site/bennett/wp-content/uploads/2016/08/hex7.png">
+                    </div>
+                </div>
+                <div id="hex-7" class="hexa random">
+                    <div class="images-container">
+                        <img id="hex-2-3-1" class="the-image7 the-image"
+                             src="http://nvg.site/bennett/wp-content/uploads/2016/08/hex13.png">
+                        <img id="hex-2-3-2" class="the-image7 the-image"
+                             src="http://nvg.site/bennett/wp-content/uploads/2016/08/hex11.png">
+                        <img id="hex-1-1-2" class="the-image7 the-image"
+                             src="http://nvg.site/bennett/wp-content/uploads/2016/08/hex12.png">
+                    </div>
+                </div>
+                <div id="hex-8" class="hexa random">
+                    <div class="images-container">
+                        <img id="hex-2-4-1" class="the-image8 the-image"
+                             src="http://nvg.site/bennett/wp-content/uploads/2016/08/hex5.png">
+                        <img id="hex-2-4-2" class="the-image8 the-image"
+                             src="http://nvg.site/bennett/wp-content/uploads/2016/08/hex6.png">
+                        <img id="hex-1-1-2" class="the-image8 the-image"
+                             src="http://nvg.site/bennett/wp-content/uploads/2016/08/hex7.png">
+                        <img id="hex-1-1-2" class="the-image8 the-image"
+                             src="http://nvg.site/bennett/wp-content/uploads/2016/08/hex8.png">
+                        <img id="hex-1-1-2" class="the-image8 the-image"
+                             src="http://nvg.site/bennett/wp-content/uploads/2016/08/hex9.png">
+                        <img id="hex-1-1-2" class="the-image8 the-image"
+                             src="http://nvg.site/bennett/wp-content/uploads/2016/08/hex10.png">
+                    </div>
+                </div>
+                <div id="hex-9" class="hexa visible-md visible-lg random">
+                    <div class="images-container">
+                        <img id="hex-2-5-1" class="the-image9 the-image"
+                             src="http://nvg.site/bennett/wp-content/uploads/2016/08/hex12.png">
+                        <img id="hex-2-5-2" class="the-image9 the-image"
+                             src="http://nvg.site/bennett/wp-content/uploads/2016/08/hex13.png">
+                        <img id="hex-1-1-2" class="the-image9 the-image"
+                             src="http://nvg.site/bennett/wp-content/uploads/2016/08/hex11.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--   ROW THREE     -->
+        <div class="row-three-con">
+            <div class="row-three">
+                <div id="hex-10" class="hexa visible-md visible-lg random">
+                    <div class="images-container">
+                        <img id="hex-3-1-1" class="the-image10 the-image"
+                             src="http://nvg.site/bennett/wp-content/uploads/2016/08/hex4.png">
+                        <img id="hex-3-1-2" class="the-image10 the-image"
+                             src="http://nvg.site/bennett/wp-content/uploads/2016/08/hex3.png">
+                    </div>
+                </div>
+                <div id="hex-11" class="hexa random">
+                    <div class="images-container">
+                        <img id="hex-3-2-1" class="the-image11 the-image"
+                             src="http://nvg.site/bennett/wp-content/uploads/2016/08/hex9.png">
+                        <img id="hex-3-2-2" class="the-image11 the-image"
+                             src="http://nvg.site/bennett/wp-content/uploads/2016/08/hex10.png">
+                        <img id="hex-1-1-2" class="the-image11 the-image"
+                             src="http://nvg.site/bennett/wp-content/uploads/2016/08/hex5.png">
+                        <img id="hex-1-1-2" class="the-image11 the-image"
+                             src="http://nvg.site/bennett/wp-content/uploads/2016/08/hex6.png">
+                        <img id="hex-1-1-2" class="the-image11 the-image"
+                             src="http://nvg.site/bennett/wp-content/uploads/2016/08/hex7.png">
+                        <img id="hex-1-1-2" class="the-image11 the-image"
+                             src="http://nvg.site/bennett/wp-content/uploads/2016/08/hex8.png">
+                    </div>
+                </div>
+                <div id="hex-12" class="hexa random">
+                    <div class="images-container">
+                        <img id="hex-3-3-1" class="the-image12 the-image"
+                             src="http://nvg.site/bennett/wp-content/uploads/2016/08/hex10.png">
+                        <img id="hex-3-3-2" class="the-image12 the-image"
+                             src="http://nvg.site/bennett/wp-content/uploads/2016/08/hex5.png">
+                        <img id="hex-1-1-2" class="the-image12 the-image"
+                             src="http://nvg.site/bennett/wp-content/uploads/2016/08/hex6.png">
+                        <img id="hex-1-1-2" class="the-image12 the-image"
+                             src="http://nvg.site/bennett/wp-content/uploads/2016/08/hex7.png">
+                        <img id="hex-1-1-2" class="the-image12 the-image"
+                             src="http://nvg.site/bennett/wp-content/uploads/2016/08/hex8.png">
+                        <img id="hex-1-1-2" class="the-image12 the-image"
+                             src="http://nvg.site/bennett/wp-content/uploads/2016/08/hex9.png">
+                    </div>
+                </div>
+                <div id="hex-13" class="hexa visible-md visible-lg random">
+                    <div class="images-container">
+                        <img id="hex-3-4-1" class="the-image13 the-image"
+                             src="http://nvg.site/bennett/wp-content/uploads/2016/08/hex2.png">
+                        <img id="hex-3-4-2" class="the-image13 the-image"
+                             src="http://nvg.site/bennett/wp-content/uploads/2016/08/hex1.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<!--<script>-->
+
+   <!-- $(window).load(function () { //start after HTML, images have loaded-->
+
+
+<!--        var InfiniteRotator1 =-->
+<!--        {-->
+<!--            init: function () {-->
+                //initial fade-in time (in milliseconds)
+<!--                var initialFadeIn = 1000;-->
+
+                //interval between items (in milliseconds)
+<!--                var itemInterval = 12000;-->
+
+                //cross-fade time (in milliseconds)
+<!--                var fadeTime = 2500;-->
+
+                //count number of items
+<!--                var numberOfItems = $('.the-image1').length;-->
+
+                //set current item
+<!--                var currentItem = 0;-->
+
+                //show first item
+<!--                $('.the-image1').eq(currentItem).fadeIn(initialFadeIn);-->
+
+                //loop through the items
+<!--                var infiniteLoop = setInterval(function () {-->
+<!--                    $('.the-image1').eq(currentItem).fadeOut(fadeTime);-->
+
+<!--                    if (currentItem == numberOfItems - 1) {-->
+<!--                        currentItem = 0;-->
+<!--                    } else {-->
+<!--                        currentItem++;-->
+<!--                    }-->
+<!--                    $('.the-image1').eq(currentItem).fadeIn(fadeTime);-->
+
+<!--                }, itemInterval);-->
+<!--            }-->
+<!--        };-->
+<!--        InfiniteRotator1.init();-->
+
+<!--        var InfiniteRotator2 =-->
+<!--        {-->
+<!--            init: function () {-->
+                //initial fade-in time (in milliseconds)
+<!--                var initialFadeIn = 1000;-->
+
+                //interval between items (in milliseconds)
+<!--                var itemInterval = 5400;-->
+
+                //cross-fade time (in milliseconds)
+<!--                var fadeTime = 2500;-->
+
+                //count number of items
+<!--                var numberOfItems = $('.the-image2').length;-->
+
+                //set current item
+<!--                var currentItem = 0;-->
+
+                //show first item
+<!--                $('.the-image2').eq(currentItem).fadeIn(initialFadeIn);-->
+
+                //loop through the items
+<!--                var infiniteLoop = setInterval(function () {-->
+<!--                    $('.the-image2').eq(currentItem).fadeOut(fadeTime);-->
+
+<!--                    if (currentItem == numberOfItems - 1) {-->
+<!--                        currentItem = 0;-->
+<!--                    } else {-->
+<!--                        currentItem++;-->
+<!--                    }-->
+<!--                    $('.the-image2').eq(currentItem).fadeIn(fadeTime);-->
+
+<!--                }, itemInterval);-->
+<!--            }-->
+<!--        };-->
+<!--        InfiniteRotator2.init();-->
+
+<!--        var InfiniteRotator3 =-->
+<!--        {-->
+<!--            init: function () {-->
+                //initial fade-in time (in milliseconds)
+<!--                var initialFadeIn = 1000;-->
+
+                //interval between items (in milliseconds)
+<!--                var itemInterval = 5200;-->
+
+                //cross-fade time (in milliseconds)
+<!--                var fadeTime = 2500;-->
+
+                //count number of items
+<!--                var numberOfItems = $('.the-image3').length;-->
+
+                //set current item
+<!--                var currentItem = 0;-->
+
+                //show first item
+<!--                $('.the-image3').eq(currentItem).fadeIn(initialFadeIn);-->
+
+                //loop through the items
+<!--                var infiniteLoop = setInterval(function () {-->
+<!--                    $('.the-image3').eq(currentItem).fadeOut(fadeTime);-->
+
+<!--                    if (currentItem == numberOfItems - 1) {-->
+<!--                        currentItem = 0;-->
+<!--                    } else {-->
+<!--                        currentItem++;-->
+<!--                    }-->
+<!--                    $('.the-image3').eq(currentItem).fadeIn(fadeTime);-->
+
+<!--                }, itemInterval);-->
+<!--            }-->
+<!--        };-->
+<!--        InfiniteRotator3.init();-->
+
+<!--        var InfiniteRotator4 =-->
+<!--        {-->
+<!--            init: function () {-->
+                //initial fade-in time (in milliseconds)
+<!--                var initialFadeIn = 1000;-->
+
+                //interval between items (in milliseconds)
+<!--                var itemInterval = 11000;-->
+
+                //cross-fade time (in milliseconds)
+<!--                var fadeTime = 2500;-->
+
+                //count number of items
+<!--                var numberOfItems = $('.the-image4').length;-->
+
+                //set current item
+<!--                var currentItem = 0;-->
+
+                //show first item
+<!--                $('.the-image4').eq(currentItem).fadeIn(initialFadeIn);-->
+
+                //loop through the items
+<!--                var infiniteLoop = setInterval(function () {-->
+<!--                    $('.the-image4').eq(currentItem).fadeOut(fadeTime);-->
+
+<!--                    if (currentItem == numberOfItems - 1) {-->
+<!--                        currentItem = 0;-->
+<!--                    } else {-->
+<!--                        currentItem++;-->
+<!--                    }-->
+<!--                    $('.the-image4').eq(currentItem).fadeIn(fadeTime);-->
+
+<!--                }, itemInterval);-->
+<!--            }-->
+<!--        };-->
+<!--        InfiniteRotator4.init();-->
+
+
+//ROW TWO
+
+<!--        var InfiniteRotator5 =-->
+<!--        {-->
+<!--            init: function () {-->
+                //initial fade-in time (in milliseconds)
+<!--                var initialFadeIn = 1000;-->
+
+                //interval between items (in milliseconds)
+<!--                var itemInterval = 6000;-->
+
+                //cross-fade time (in milliseconds)
+<!--                var fadeTime = 2500;-->
+
+                //count number of items
+<!--                var numberOfItems = $('.the-image5').length;-->
+
+                //set current item
+<!--                var currentItem = 0;-->
+
+                //show first item
+<!--                $('.the-image5').eq(currentItem).fadeIn(initialFadeIn);-->
+
+                //loop through the items
+<!--                var infiniteLoop = setInterval(function () {-->
+<!--                    $('.the-image5').eq(currentItem).fadeOut(fadeTime);-->
+
+<!--                    if (currentItem == numberOfItems - 1) {-->
+<!--                        currentItem = 0;-->
+<!--                    } else {-->
+<!--                        currentItem++;-->
+<!--                    }-->
+<!--                    $('.the-image5').eq(currentItem).fadeIn(fadeTime);-->
+
+<!--                }, itemInterval);-->
+<!--            }-->
+<!--        };-->
+<!--        InfiniteRotator5.init();-->
+
+<!--        var InfiniteRotator6 =-->
+<!--        {-->
+<!--            init: function () {-->
+                //initial fade-in time (in milliseconds)
+<!--                var initialFadeIn = 1000;-->
+
+                //interval between items (in milliseconds)
+<!--                var itemInterval = 5600;-->
+
+                //cross-fade time (in milliseconds)
+<!--                var fadeTime = 2500;-->
+
+                //count number of items
+<!--                var numberOfItems = $('.the-image6').length;-->
+
+                //set current item
+<!--                var currentItem = 0;-->
+
+                //show first item
+<!--                $('.the-image6').eq(currentItem).fadeIn(initialFadeIn);-->
+
+                //loop through the items
+<!--                var infiniteLoop = setInterval(function () {-->
+<!--                    $('.the-image6').eq(currentItem).fadeOut(fadeTime);-->
+
+<!--                    if (currentItem == numberOfItems - 1) {-->
+<!--                        currentItem = 0;-->
+<!--                    } else {-->
+<!--                        currentItem++;-->
+<!--                    }-->
+<!--                    $('.the-image6').eq(currentItem).fadeIn(fadeTime);-->
+
+<!--                }, itemInterval);-->
+<!--            }-->
+<!--        };-->
+<!--        InfiniteRotator6.init();-->
+
+<!--        var InfiniteRotator7 =-->
+<!--        {-->
+<!--            init: function () {-->
+                //initial fade-in time (in milliseconds)
+<!--                var initialFadeIn = 1000;-->
+
+                //interval between items (in milliseconds)
+<!--                var itemInterval = 7000;-->
+
+                //cross-fade time (in milliseconds)
+<!--                var fadeTime = 2500;-->
+
+                //count number of items
+<!--                var numberOfItems = $('.the-image7').length;-->
+
+                //set current item
+<!--                var currentItem = 0;-->
+
+                //show first item
+<!--                $('.the-image7').eq(currentItem).fadeIn(initialFadeIn);-->
+
+                //loop through the items
+<!--                var infiniteLoop = setInterval(function () {-->
+<!--                    $('.the-image7').eq(currentItem).fadeOut(fadeTime);-->
+
+<!--                    if (currentItem == numberOfItems - 1) {-->
+<!--                        currentItem = 0;-->
+<!--                    } else {-->
+<!--                        currentItem++;-->
+<!--                    }-->
+<!--                    $('.the-image7').eq(currentItem).fadeIn(fadeTime);-->
+
+<!--                }, itemInterval);-->
+<!--            }-->
+<!--        };-->
+<!--        InfiniteRotator7.init();-->
+
+<!--        var InfiniteRotator8 =-->
+<!--        {-->
+<!--            init: function () {-->
+                //initial fade-in time (in milliseconds)
+<!--                var initialFadeIn = 1000;-->
+
+                //interval between items (in milliseconds)
+<!--                var itemInterval = 5000;-->
+
+                //cross-fade time (in milliseconds)
+<!--                var fadeTime = 2500;-->
+
+                //count number of items
+<!--                var numberOfItems = $('.the-image8').length;-->
+
+                //set current item
+<!--                var currentItem = 0;-->
+
+                //show first item
+<!--                $('.the-image8').eq(currentItem).fadeIn(initialFadeIn);-->
+
+                //loop through the items
+<!--                var infiniteLoop = setInterval(function () {-->
+<!--                    $('.the-image8').eq(currentItem).fadeOut(fadeTime);-->
+
+<!--                    if (currentItem == numberOfItems - 1) {-->
+<!--                        currentItem = 0;-->
+<!--                    } else {-->
+<!--                        currentItem++;-->
+<!--                    }-->
+<!--                    $('.the-image8').eq(currentItem).fadeIn(fadeTime);-->
+
+<!--                }, itemInterval);-->
+<!--            }-->
+<!--        };-->
+<!--        InfiniteRotator8.init();-->
+
+<!--        var InfiniteRotator9 =-->
+<!--        {-->
+<!--            init: function () {-->
+                //initial fade-in time (in milliseconds)
+<!--                var initialFadeIn = 1000;-->
+
+                //interval between items (in milliseconds)
+<!--                var itemInterval = 8000;-->
+
+                //cross-fade time (in milliseconds)
+<!--                var fadeTime = 2500;-->
+
+                //count number of items
+<!--                var numberOfItems = $('.the-image9').length;-->
+
+                //set current item
+<!--                var currentItem = 0;-->
+
+                //show first item
+<!--                $('.the-image9').eq(currentItem).fadeIn(initialFadeIn);-->
+
+                //loop through the items
+<!--                var infiniteLoop = setInterval(function () {-->
+<!--                    $('.the-image9').eq(currentItem).fadeOut(fadeTime);-->
+
+<!--                    if (currentItem == numberOfItems - 1) {-->
+<!--                        currentItem = 0;-->
+<!--                    } else {-->
+<!--                        currentItem++;-->
+<!--                    }-->
+<!--                    $('.the-image9').eq(currentItem).fadeIn(fadeTime);-->
+
+<!--                }, itemInterval);-->
+<!--            }-->
+<!--        };-->
+<!--        InfiniteRotator9.init();-->
+
+//ROW THREE
+<!--        var InfiniteRotator10 =-->
+<!--        {-->
+<!--            init: function () {-->
+                //initial fade-in time (in milliseconds)
+<!--                var initialFadeIn = 1000;-->
+
+                //interval between items (in milliseconds)
+<!--                var itemInterval = 10000;-->
+
+                //cross-fade time (in milliseconds)
+<!--                var fadeTime = 1100;-->
+
+                //count number of items
+<!--                var numberOfItems = $('.the-image10').length;-->
+
+                //set current item
+<!--                var currentItem = 0;-->
+
+                //show first item
+<!--                $('.the-image10').eq(currentItem).fadeIn(initialFadeIn);-->
+
+                //loop through the items
+<!--                var infiniteLoop = setInterval(function () {-->
+<!--                    $('.the-image10').eq(currentItem).fadeOut(fadeTime);-->
+
+<!--                    if (currentItem == numberOfItems - 1) {-->
+<!--                        currentItem = 0;-->
+<!--                    } else {-->
+<!--                        currentItem++;-->
+<!--                    }-->
+<!--                    $('.the-image10').eq(currentItem).fadeIn(fadeTime);-->
+
+<!--                }, itemInterval);-->
+<!--            }-->
+<!--        };-->
+<!--        InfiniteRotator10.init();-->
+
+<!--        var InfiniteRotator11 =-->
+<!--        {-->
+<!--            init: function () {-->
+                //initial fade-in time (in milliseconds)
+<!--                var initialFadeIn = 1000;-->
+
+                //interval between items (in milliseconds)
+<!--                var itemInterval = 5800;-->
+
+                //cross-fade time (in milliseconds)
+<!--                var fadeTime = 2500;-->
+
+                //count number of items
+<!--                var numberOfItems = $('.the-image11').length;-->
+
+                //set current item
+<!--                var currentItem = 0;-->
+
+                //show first item
+<!--                $('.the-image11').eq(currentItem).fadeIn(initialFadeIn);-->
+
+                //loop through the items
+<!--                var infiniteLoop = setInterval(function () {-->
+<!--                    $('.the-image11').eq(currentItem).fadeOut(fadeTime);-->
+
+<!--                    if (currentItem == numberOfItems - 1) {-->
+<!--                        currentItem = 0;-->
+<!--                    } else {-->
+<!--                        currentItem++;-->
+<!--                    }-->
+<!--                    $('.the-image11').eq(currentItem).fadeIn(fadeTime);-->
+
+<!--                }, itemInterval);-->
+<!--            }-->
+<!--        };-->
+<!--        InfiniteRotator11.init();-->
+
+<!--        var InfiniteRotator12 =-->
+<!--        {-->
+<!--            init: function () {-->
+                //initial fade-in time (in milliseconds)
+<!--                var initialFadeIn = 1000;-->
+
+                //interval between items (in milliseconds)
+<!--                var itemInterval = 6000;-->
+
+                //cross-fade time (in milliseconds)
+<!--                var fadeTime = 2500;-->
+
+                //count number of items
+<!--                var numberOfItems = $('.the-image12').length;-->
+
+                //set current item
+<!--                var currentItem = 0;-->
+
+                //show first item
+<!--                $('.the-image12').eq(currentItem).fadeIn(initialFadeIn);-->
+
+                //loop through the items
+<!--                var infiniteLoop = setInterval(function () {-->
+<!--                    $('.the-image12').eq(currentItem).fadeOut(fadeTime);-->
+
+<!--                    if (currentItem == numberOfItems - 1) {-->
+<!--                        currentItem = 0;-->
+<!--                    } else {-->
+<!--                        currentItem++;-->
+<!--                    }-->
+<!--                    $('.the-image12').eq(currentItem).fadeIn(fadeTime);-->
+
+<!--                }, itemInterval);-->
+<!--            }-->
+<!--        };-->
+<!--        InfiniteRotator12.init();-->
+
+<!--        var InfiniteRotator13 =-->
+<!--        {-->
+<!--            init: function () {-->
+                //initial fade-in time (in milliseconds)
+<!--                var initialFadeIn = 1000;-->
+
+                //interval between items (in milliseconds)
+<!--                var itemInterval = 12000;-->
+
+                //cross-fade time (in milliseconds)
+<!--                var fadeTime = 2500;-->
+
+                //count number of items
+<!--                var numberOfItems = $('.the-image13').length;-->
+
+                //set current item
+<!--                var currentItem = 0;-->
+
+                //show first item
+<!--                $('.the-image13').eq(currentItem).fadeIn(initialFadeIn);-->
+
+                //loop through the items
+<!--                var infiniteLoop = setInterval(function () {-->
+<!--                    $('.the-image13').eq(currentItem).fadeOut(fadeTime);-->
+
+<!--                    if (currentItem == numberOfItems - 1) {-->
+<!--                        currentItem = 0;-->
+<!--                    } else {-->
+<!--                        currentItem++;-->
+<!--                    }-->
+<!--                    $('.the-image13').eq(currentItem).fadeIn(fadeTime);-->
+
+<!--                }, itemInterval);-->
+<!--            }-->
+<!--        };-->
+<!--        InfiniteRotator13.init();-->
+
+
+<!--    });-->
+
+<!--</script>-->

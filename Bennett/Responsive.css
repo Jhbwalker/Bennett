@@ -1,0 +1,315 @@
+@media screen and (max-width: 360px){
+	#Main_Container{
+	
+	}
+	
+	
+	#hexImage{
+		margin: 10px 25% 5px 25%;
+	}
+	#textHeading{
+		margin:15px 15% 10px 15%;
+	}
+	#underword{
+		margin:5px 12% 5px 12%;
+		text-align: center; 
+		width:75%;
+	}
+	#overword{
+		padding-top: 15px;
+		padding-right: 0;
+		padding-bottom: 15px;
+		padding-left: 0;
+		text-align: center;
+		width: 75%;
+		margin:200px auto auto auto;
+	}
+	#backdrop{
+		width:100%;
+		padding:2px;
+	}
+	#backdrop p{
+		font-size: 1.5em;
+	}
+	#contactContainer{
+		margin:-10px 25% 5% 25%;
+		
+	}
+	#_Name{
+		width:100%;
+	}
+	#mybtn{
+		margin:5px 25% 5% 25%;
+	}
+	
+	
+}
+/************************** 
+Tablet Responsive Design 
+***************************/
+@media screen and (max-width: 540px){
+		#Main_Container{
+	
+	}
+	
+	
+	#hexImage{
+		margin: 10px 25% 5px 25%;
+	}
+	#textHeading{
+		margin:15px 15% 10px 15%;
+	}
+	#underword{
+		margin:5px 12% 5px 12%;
+		text-align: center; 
+		width:75%;
+	}
+	#overword{
+		padding-top: 15px;
+		padding-right: 0;
+		padding-bottom: 15px;
+		padding-left: 0;
+		text-align: center;
+		width: 75%;
+		margin:200px auto auto auto;
+	}
+	#backdrop{
+		width:100%;
+		padding:2px;
+	}
+	#backdrop p{
+		font-size: 1.5em;
+	}
+	#contactContainer{
+		margin:-10px 25% 5% 25%;
+		
+	}
+	#_Name{
+		width:100%;
+	}
+	#mybtn{
+		margin:5px 25% 5% 25%;
+	}
+	
+}
+
+/************************** 
+Desktop Responsive Design 
+***************************/
+@media screen and (max-width: 660px){
+	/* Main Styling for About Page */
+#Main_Container{
+	background: url(http://nvg.site/bennett/wp-content/uploads/2016/08/bg.jpg);
+	background-repeat: no-repeat; 
+	background-size: 100% 100%; 
+}
+
+.section{
+	margin-top:-60px;
+}
+/*All of section 1 of About page*/
+#section1{
+	margin-top: -75px; 
+}
+
+#AboutKelly{
+	margin:5px;
+	padding:5%;
+}
+#AboutKelly p{
+	color:white;
+	font-size: 2.3em;
+	text-align: center;
+	text-overflow: auto;
+	margin:20px 15px 25px 21%;
+}
+#hexImage{
+	float: left;
+	margin-left:30%;
+	margin-bottom: 0; 
+	margin-top:10px;
+	margin-right:3%;
+	padding: 20px;
+	width:320px;
+	height:auto;
+	
+}
+#wallText{
+	color:white;
+}
+
+#textHeading{
+	color:#fff;
+	font-size:1.3em;
+}
+#AboutText{
+	font-size: 1.5em;
+	color:white;
+	overflow: hidden;
+	word-wrap: break-word;
+	margin:10px;
+	
+}
+
+#contactContainer{ 
+	margin:20px 25%;
+	width:50%;	
+}
+#mybtn{
+	margin:0 45%;
+}
+#fitC{
+	color:white;
+	text-align: center;
+	margin: 25px 15px;
+	
+}
+#underword{
+	float: left;
+	width:450px;
+	height: auto;
+	font-size: 1.125em; 
+	color:#fff; 
+	
+}
+#overword{
+	color:#fff;
+	clear:both;
+	padding: 30px; 
+	width: 50%; 
+	margin-left:25%;
+	font-size: 1.125em; 
+	margin-top: -45px;
+
+}
+#msg{
+height: .5px;
+}
+/*All of section 2 of About page*/
+#section2{
+	margin:15px 0;
+}
+#section2 p{ 
+		text-align: center; 
+		font-size:4em;
+		text-transform: uppercase;
+}
+#backdrop{
+	padding: 2px;
+}
+.well .well-large{  
+	color:black; 
+	
+}
+	
+}
+/************************** 
+Large Desktop Responsive Design 
+***************************/
+@media screen and (min-width: 1200px){
+	/* Main Styling for About Page */
+#Main_Container{
+	background: url(http://nvg.site/bennett/wp-content/uploads/2016/08/bg.jpg);
+	background-repeat: no-repeat; 
+	background-size: 100% 100%; 
+}
+
+.section{
+	margin-top:-60px;
+}
+/*All of section 1 of About page*/
+#section1{
+	margin-top: -75px; 
+}
+
+#AboutKelly{
+	margin:5px;
+	padding:5%;
+}
+#AboutKelly p{
+	color:white;
+	font-size: 2.3em;
+	text-align: center;
+	text-overflow: auto;
+	margin:20px 15px 25px 21%;
+}
+#hexImage{
+	float: left;
+	margin-left:30%;
+	margin-bottom: 0; 
+	margin-top:10px;
+	margin-right:3%;
+	padding: 20px;
+	width:320px;
+	height:auto;
+	
+}
+#wallText{
+	color:white;
+}
+
+#textHeading{
+	color:#fff;
+	font-size:1.3em;
+}
+#AboutText{
+	font-size: 1.5em;
+	color:white;
+	overflow: hidden;
+	word-wrap: break-word;
+	margin:10px;
+	
+}
+
+#contactContainer{ 
+	margin:20px 25%;
+	width:50%;	
+}
+#mybtn{
+	margin:0 45%;
+}
+#fitC{
+	color:white;
+	text-align: center;
+	margin: 25px 15px;
+	
+}
+#underword{
+	float: left;
+	width:450px;
+	height: auto;
+	font-size: 1.125em; 
+	color:#fff; 
+	
+}
+#overword{
+	color:#fff;
+	clear:both;
+	padding: 30px; 
+	width: 50%; 
+	margin-left:25%;
+	font-size: 1.125em; 
+	margin-top: -45px;
+
+}
+#msg{
+height: .5px;
+}
+/*All of section 2 of About page*/
+#section2{
+	margin:15px 0;
+}
+#section2 p{ 
+		text-align: center; 
+		font-size:4em;
+		text-transform: uppercase;
+}
+#backdrop{
+	padding: 2px;
+}
+.well .well-large{  
+	color:black; 
+	
+}
+	
+}

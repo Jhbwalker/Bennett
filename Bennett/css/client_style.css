@@ -1,0 +1,75 @@
+
+@import url(css/site.css);
+@import url(css/mac.css);
+@import url(css/header.css);
+@import url(css/footer.css);
+@import 'https://fonts.googleapis.com/css?family=Montserrat';
+@import url(animate.css);
+
+
+h1{
+  color:white !important;
+}
+h2{
+  color:white !important;
+}
+h3{
+  color:white !important;
+}
+p{
+  font-family:'montserrat', helvetica;
+}
+
+#Main_Container{
+  background: url('http://nvg.site/bennett/wp-content/uploads/2016/08/bg.jpg');
+  background-size:100% 100%;
+  height: auto;
+}
+#innerContainer{
+  margin-top: 125px;
+}
+#pic1{
+  padding:0;
+}
+#pic2{
+  padding:0;
+}
+
+#texa{
+  margin-top:50px;
+  color:white;
+}
+#texb{
+  margin-top:40px;
+  color:white;
+}
+#innertext{
+  /*margin-left:30px;*/
+}
+#texc{
+  margin-top:50px;
+  color:white;
+}
+#mid_row{
+ margin-top:10px;
+ margin-bottom:10px;
+}
+
+.navbar .navbar-nav {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+  color:green;
+}
+
+.navbar .navbar-collapse {
+  text-align: center;
+}
+#bottom{
+  color:#222;
+}
+
+@media screen and (max-width: 660px){
+
+
+}
