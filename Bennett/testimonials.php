@@ -64,12 +64,12 @@ get_header();
     </div>
 </nav>
 
-<!--<div class="container-fluid" id="Main_Container">
+<div class="container-fluid" id="Main_Container">
 
     <div class=" list-group" id="contacttextC">
-        <div class="container">
+       <!-- <div class="container">
             <div class="row visible-md visible-lg" id="banner">
-          <!-- <div class="col-xs-4"><p class="text-left"><strong>Kelly Bennett PR Has Been A Featured Expert In The Following National Media Outlets:</strong></p></div>-->
+           <div class="col-xs-4"><p class="text-left"><strong>Kelly Bennett PR Has Been A Featured Expert In The Following National Media Outlets:</strong></p></div>
             <div id="filler">
                 <div class="col-xs-3"> <img class="img-responsive img-rounded img-thumbnail" src="http://nvg.site/bennett/wp-content/uploads/2016/10/ec.gif" alt=""></div>
                 <div class="col-xs-3"> <img class="img-responsive img-rounded" src="http://nvg.site/bennett/wp-content/uploads/2016/10/fc.gif" alt=""></div>
@@ -81,10 +81,10 @@ get_header();
         </div>
 
 
-        </div>
+        </div>-->
         <br class="visible-xs visible-sm">
         <br class="visible-xs visible-sm">
-        <br class="visible-xs visible-sm">-->
+        <br class="visible-xs visible-sm">
 
 
         <center><h1 class="visible-md visible-lg">Kelly's Testimonials</strong></h1></center>
