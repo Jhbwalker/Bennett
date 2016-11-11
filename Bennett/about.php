@@ -8,6 +8,7 @@
 get_header();
 
 ?>
+
 <nav class="navbar navbar-inverse navbar-fixed-top visible-xs visible-sm">
     <div class="container">
         <div class="navbar-header">
@@ -70,7 +71,7 @@ get_header();
 <!--Image Span-->
         <div class="row  section visible-md visible-lg" id="section2">
             <div class="">
-                <div class="" id="backdrop" style="margin-top:60px !important;">
+                <div class="" id="backdrop" style="margin-top:117px !important; margin-bottom: -50px; ">
                     <p class="text-center">Real clients, Real Results.</p>
                     <em>Opening Doors and Making Things Happen</em>
 
